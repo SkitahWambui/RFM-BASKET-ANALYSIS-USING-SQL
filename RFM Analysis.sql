@@ -80,3 +80,66 @@ SELECT
 FROM segments r
 LEFT JOIN orders o
 ON r.customer_name = o.customer_name;
+
+ -- selecting orders with more than one product
+SELECT 
+	order_id,
+    COUNT(subcategory) As num_products
+FROM orderdetails
+GROUP BY order_id
+HAVING COUNT(subcategory) >=2;
+
+-- generate product pairs
+WITH orderproducts AS (
+SELECT 
+	order_id,
+    subcategory
+FROM orderdetails
+)
+SELECT 
+	od1.subcategory AS product1,
+    od2.subcategory AS product2,
+    COUNT(*) AS pair_count
+FROM orderdetails od1
+JOIN orderdetails od2
+	ON od1.order_id = od2.order_id
+	AND od1.subcategory < od2.subcategory
+GROUP BY od1.subcategory, od2.subcategory
+ORDER BY pair_count DESC;
+
+-- calculate support, confidence and lift
+WITH productsupport AS (
+SELECT
+	subcategory,
+    COUNT(DISTINCT order_id) as transaction_count,
+    COUNT(DISTINCT order_id) *1.0 / (SELECT
+    COUNT(DISTINCT order_id) FROM orderdetails) AS support
+FROM orderdetails
+GROUP BY subcategory
+ORDER BY support DESC
+),
+pairsupport AS (
+SELECT 
+	od1.subcategory AS product1,
+    od2.subcategory AS product2,
+    COUNT(DISTINCT od1.order_id) AS pairtransactioncount,
+    COUNT(DISTINCT od1.order_id) *1.0 / (SELECT 
+    COUNT(DISTINCT order_id) FROM orderdetails) AS pairsupport
+FROM orderdetails od1
+JOIN orderdetails od2
+	ON od1.order_id = od2.order_id 
+    AND od1.subcategory < od2.subcategory
+GROUP BY od1.subcategory, od2.subcategory
+)
+SELECT 
+	ps.product1,
+    ps.product2,
+    ps.pairsupport AS support12,
+    ROUND(ps.pairsupport / p1.support, 2) AS confidence1to2,
+    ROUND(ps.pairsupport / p2.support, 2) AS confidence2to1,
+    ROUND(ps.pairsupport / (p1.support * p2.support), 2) AS lift
+FROM pairsupport ps
+JOIN productsupport p1 ON ps.product1 = p1.subcategory
+JOIN productsupport p2 ON ps.product2 = p2.subcategory
+ORDER BY lift
+;
