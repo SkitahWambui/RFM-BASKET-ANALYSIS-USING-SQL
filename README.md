@@ -6,6 +6,8 @@ This project performs **RFM (Recency, Frequency, Monetary) analysis** and **cust
 
 This is the reason why your friend might have a discount on Bolt and you don't, your RFM scores might be different meaning Bolt is using targeted marketing.
 
+<img src="https://github.com/user-attachments/assets/8e812d5c-dea1-415e-9b21-5624c90a246c" alt="Customer Segmentation" width="300" height="200">
+
    ![demographic-geographic-psychographic-behavioral-market-segmentation-vector](https://github.com/user-attachments/assets/8e812d5c-dea1-415e-9b21-5624c90a246c)
 
 
