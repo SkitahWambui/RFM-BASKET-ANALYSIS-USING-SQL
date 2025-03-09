@@ -12,9 +12,6 @@
    Utilize market basket analysis to identify frequently co-purchased items. This analysis will provide actionable insights to design effective cross-selling and upselling strategies, ultimately driving increased sales and improving overall business performance.
 
 
-![discount offer](https://github.com/user-attachments/assets/8da3c595-b352-47df-9207-aeba3bc3be9d)
-<img src="https://github.com/user-attachments/assets/8da3c595-b352-47df-9207-aeba3bc3be9d" width="300" height="200">
-
 
 ## RFM Analysis and Customer Segmentation Using SQL
 
