@@ -1,5 +1,19 @@
 # RFM AND MARKET BASKET ANALYSIS USING SQL AND PYTHON
 
+**Project Objectives:**
+
+** 1. Conduct RFM (Recency, Frequency, Monetary) Analysis Using SQL:**
+   Perform an in-depth RFM analysis on customer transaction data to segment customers based on their purchasing behavior. This segmentation will enable targeted marketing strategies, enhance customer retention efforts, and optimize revenue generation.
+
+** 2. Visualize Top Customers Using Power BI:**
+   Create visualizations to highlight top-performing customers. These insights will support data-driven decision-making, helping to maintain and strengthen customer loyalty through tailored engagement strategies.
+
+** 3. Perform Market Basket Analysis Using Python:**
+   Utilize market basket analysis to identify frequently co-purchased items. This analysis will provide actionable insights to design effective cross-selling and upselling strategies, ultimately driving increased sales and improving overall business performance.
+
+
+
+
 ## RFM Analysis and Customer Segmentation Using SQL
 
 This project performs **RFM (Recency, Frequency, Monetary) analysis** and **customer segmentation** on a sales dataset using SQL. The goal is to identify customer behavior patterns and segment customers based on their purchasing habits to improve marketing strategies and customer retention.
@@ -7,8 +21,6 @@ This project performs **RFM (Recency, Frequency, Monetary) analysis** and **cust
 This is the reason why your friend might have a discount on Bolt and you don't, your RFM scores might be different meaning Bolt is using targeted marketing.
 
 <img src="https://github.com/user-attachments/assets/8e812d5c-dea1-415e-9b21-5624c90a246c" alt="Customer Segmentation" width="600" height="500">
-
-   ![demographic-geographic-psychographic-behavioral-market-segmentation-vector](https://github.com/user-attachments/assets/8e812d5c-dea1-415e-9b21-5624c90a246c)
 
 
 ### Dataset
@@ -80,8 +92,6 @@ The dataset used in this project contains two tables:
 #### 4. Visualisation on Power BI
 As Madhav Stores main goal was to reward top customers, I created a visualisation in Power BI to illustrate the impact of the top customers and their demographics. 
 
-<img src="https://github.com/user-attachments/assets/06f04e6e-62c9-429e-a536-c0f8e16f3aba" alt="Top Customers" width="600" height="500">
-
    ![image](https://github.com/user-attachments/assets/06f04e6e-62c9-429e-a536-c0f8e16f3aba)
 
 
@@ -97,8 +107,6 @@ This dashboard provides powerful insights for targeted marketing. The store shou
 
 ## Market Basket Analysis Using FP-Growth Algorithm (Python)
 
-<img src="https://github.com/user-attachments/assets/e6985768-a603-4b14-8fe8-b0fa2aefd599" alt="Market Basket" width="600" height="500">
-
    ![image](https://github.com/user-attachments/assets/e6985768-a603-4b14-8fe8-b0fa2aefd599)
 
 This project performs **Market Basket Analysis** using the **FP-Growth algorithm** to identify frequent itemsets and association rules from transactional data. The goal is to uncover relationships between products and understand which items are frequently purchased together.
@@ -108,7 +116,6 @@ For ecommerce stores a masket basket analysis helps to increase sales as a store
 
 <img src="https://github.com/user-attachments/assets/b9614509-7724-4ce1-bb06-b08a4719cc47" alt="Frequently Bought Together" width="300" height="200">
 
-   ![Screenshot_2025-02-27-17-53-10-076_com android chrome](https://github.com/user-attachments/assets/b9614509-7724-4ce1-bb06-b08a4719cc47)
 
 
 ### Dataset
@@ -153,8 +160,6 @@ The dataset used in this project contains transactional data with the following 
    rules = association_rules(frequent_items, metric='lift', min_threshold=0.05, num_itemsets=2)
    rules.head()
    ```
-
-<img src="https://github.com/user-attachments/assets/c2ff3d61-fd21-40bc-984a-84dfe32668f3" alt="Association Rules" width="600" height="500">
 
    ![image](https://github.com/user-attachments/assets/c2ff3d61-fd21-40bc-984a-84dfe32668f3)
 
