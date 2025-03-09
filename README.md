@@ -2,13 +2,13 @@
 
 **Project Objectives:**
 
-** 1. Conduct RFM (Recency, Frequency, Monetary) Analysis Using SQL:**
+**1. Conduct RFM (Recency, Frequency, Monetary) Analysis Using SQL:**
    Perform an in-depth RFM analysis on customer transaction data to segment customers based on their purchasing behavior. This segmentation will enable targeted marketing strategies, enhance customer retention efforts, and optimize revenue generation.
 
-** 2. Visualize Top Customers Using Power BI:**
+**2. Visualize Top Customers Using Power BI:**
    Create visualizations to highlight top-performing customers. These insights will support data-driven decision-making, helping to maintain and strengthen customer loyalty through tailored engagement strategies.
 
-** 3. Perform Market Basket Analysis Using Python:**
+**3. Perform Market Basket Analysis Using Python:**
    Utilize market basket analysis to identify frequently co-purchased items. This analysis will provide actionable insights to design effective cross-selling and upselling strategies, ultimately driving increased sales and improving overall business performance.
 
 
