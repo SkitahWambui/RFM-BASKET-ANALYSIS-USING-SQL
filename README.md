@@ -1,20 +1,20 @@
 # RFM AND MARKET BASKET ANALYSIS USING SQL AND PYTHON
-# Market Basket Analysis Using FP-Growth Algorithm
-
-![A basket.](https://www.facebook.com/photo/?fbid=2575698139120326&set=a.973809642642525)
+## Market Basket Analysis Using FP-Growth Algorithm
+![image](https://github.com/user-attachments/assets/e6985768-a603-4b14-8fe8-b0fa2aefd599)
 This project performs **Market Basket Analysis** using the **FP-Growth algorithm** to identify frequent itemsets and association rules from transactional data. The goal is to uncover relationships between products and understand which items are frequently purchased together.
 Understanding which items are often bought together is important because it can help dictate how a supermarket is arranged. For example, bread and milk might be put on the same aisle because they are often bought together.
 
 For ecommerce stores a masket basket analysis helps to increase sales as a store is able to recommend other items when a customer makes a purchase.
-![Frequently bought together.](https://photos.google.com/photo/AF1QipOW59sUXEV-0Jc47DxeFxvY-4KoIy_cSbCxec2L)
+![Screenshot_2025-02-27-17-53-10-076_com android chrome](https://github.com/user-attachments/assets/b9614509-7724-4ce1-bb06-b08a4719cc47)
 
-## Dataset
+
+### Dataset
 The dataset used in this project contains transactional data with the following columns:
 - `Order ID`: Unique identifier for each order.
 - `Sub-Category`: The category of the product purchased.
 - `Quantity`: The number of units purchased.
 
-## Steps
+### Steps
 1. **Data Preprocessing**:
    - Grouped the data by `Order ID` and created a list of `Sub-Category` items for each order.
    - Encoded the transaction data into a binary matrix using `TransactionEncoder`.
