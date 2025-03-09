@@ -12,6 +12,8 @@
    Utilize market basket analysis to identify frequently co-purchased items. This analysis will provide actionable insights to design effective cross-selling and upselling strategies, ultimately driving increased sales and improving overall business performance.
 
 
+![discount offer](https://github.com/user-attachments/assets/8da3c595-b352-47df-9207-aeba3bc3be9d)
+<img src="https://github.com/user-attachments/assets/8da3c595-b352-47df-9207-aeba3bc3be9d" width="300" height="200">
 
 
 ## RFM Analysis and Customer Segmentation Using SQL
@@ -24,7 +26,7 @@ This is the reason why your friend might have a discount on Bolt and you don't, 
 
 
 ### Dataset
-The dataset used in this project contains two tables:
+The <a href="https://www.kaggle.com/datasets/saadharoon27/madhav-store-dataset/data">dataset</a> dataset used in this project contains two tables:
 1. **`orders`**: Contains information about customer orders, including `order_id`, `customer_name`, `order_date`, `state`, and `city`.
 2. **`orderdetails`**: Contains details about each order, including `order_id`, `amount`, `profit`, `quantity`, `category`, `subcategory`, and `paymentmode`.
 
@@ -170,8 +172,10 @@ The dataset used in this project contains transactional data with the following 
 - By leveraging these insights, you can optimize product placement, marketing strategies, and customer engagement to drive sales and improve customer satisfaction.
 
 ## Requirements
-- Python 3.x
+- SQL
+- Python 
 - Libraries: `pandas`, `mlxtend`, `matplotlib`, `seaborn`
+- Power BI
 
 ## Installation
 ```bash
