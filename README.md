@@ -36,7 +36,7 @@ The dataset used in this project contains transactional data with the following 
    plt.figure(figsize=(20,10))
    sns.barplot(x=top_10.index,y=top_15.values)
    ```
-                        ![image](https://github.com/user-attachments/assets/c857ef56-8de1-4ffb-a6af-a7ee5b7e0694)
+     ![image](https://github.com/user-attachments/assets/c857ef56-8de1-4ffb-a6af-a7ee5b7e0694)
 
 
 3. **FP-Growth Algorithm**:
