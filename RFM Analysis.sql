@@ -20,6 +20,7 @@ WHERE order_date LIKE '%-%-%';
 ALTER TABLE orders
 	MODIFY COLUMN order_date DATE;    
 
+-- RFM ANALYSIS
 -- Customers' table
 CREATE OR REPLACE VIEW rfm
 AS
@@ -52,16 +53,10 @@ FROM rfm_calc;
 SELECT * FROM rfm;
 
 -- segmenting customers based on the RFM scores
+CREATE VIEW segmented AS
 WITH segments AS (
 SELECT
-	customer_name,
-    last_order_date,
-    order_value,
-    recency,
-    frequency,
-    monetary, 
-    rfm_weights,
-    norm_rfm_score,
+	*,
     CASE WHEN norm_rfm_score = 0 THEN "lost_customers"
     WHEN norm_rfm_score >= 0.8 THEN "top customers"
     WHEN norm_rfm_score >= 0.5 THEN "loyal customers"
@@ -71,16 +66,11 @@ SELECT
 FROM rfm
 ORDER BY norm_rfm_score DESC
 )
--- find which regions have the most at risk customers
-SELECT
-	r.customer_name,
-    o.state,
-    o.city,
-    r.segment
-FROM segments r
-LEFT JOIN orders o
-ON r.customer_name = o.customer_name;
+SELECT * FROM segments;
+-- check out the view
+SELECT * FROM segmented;
 
+ -- MARKET BASKET ANALYSIS   
  -- selecting orders with more than one product
 SELECT 
 	order_id,
@@ -108,6 +98,7 @@ GROUP BY od1.subcategory, od2.subcategory
 ORDER BY pair_count DESC;
 
 -- calculate support, confidence and lift
+CREATE OR REPLACE VIEW marketbasket AS
 WITH productsupport AS (
 SELECT
 	subcategory,
@@ -141,5 +132,7 @@ SELECT
 FROM pairsupport ps
 JOIN productsupport p1 ON ps.product1 = p1.subcategory
 JOIN productsupport p2 ON ps.product2 = p2.subcategory
-ORDER BY lift
 ;
+SELECT * FROM marketbasket
+WHERE lift >= 1
+ORDER BY lift, confidence1to2, support12  DESC;
